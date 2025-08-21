@@ -26,5 +26,6 @@
   "python.linting.pylintEnabled": true,
   "python.linting.lintOnSave": true,
   "python.formatting.provider": "black",
-  "yaml.format.enable": true
+  "yaml.format.enable": true,
+  "snippets.ultisnips.pythonPrompt": false
 }
