@@ -48,6 +48,9 @@ brew "tmux"
 brew "tree"
 brew "htop"
 brew "libpq"
+brew "claude-code"
+brew "postgresql"
+brew "gh"
 
 # --------------------
 # Fonts - install fonts through brew
