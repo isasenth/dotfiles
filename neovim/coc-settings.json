@@ -27,5 +27,9 @@
   "python.linting.lintOnSave": true,
   "python.formatting.provider": "black",
   "yaml.format.enable": true,
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "eslint.useFlatConfig": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
