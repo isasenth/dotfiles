@@ -15,6 +15,9 @@ fi
 export PATH="/opt/homebrew/Cellar/libpq/17.6/bin/:$PATH"
 # path for poetry
 export PATH="/Users/isase/.local/bin:$PATH"
+# path for psql
+export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
+
 
 # --------------------
 # alias custom command
@@ -41,6 +44,9 @@ alias vim='nvim'
 alias dev-ssm-w=$AWS_START_SSM_SESSION_COMMAND_DEV_WRITABLE
 alias prd-ssm-w=$AWS_START_SSM_SESSION_COMMAND_PRD_WRITABLE
 alias prd-ssm-r=$AWS_START_SSM_SESSION_COMMAND_PRD_READONLY
+alias prd-psql-admin='psql -h localhost -p 8888 -U prdtfrdsusername -d takumiforce'
+alias prd-psql-write='psql -h localhost -p 8888 -U write_user -d takumiforce'
+alias prd-psql-read='psql -h localhost -p 8888 -U readonly_user -d takumiforce'
 
 # --------------------
 # other native zsh settings
