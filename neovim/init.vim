@@ -111,6 +111,7 @@ call plug#begin('~/.vim/plugged')
   " markdown-preview - live preview markdown files with browser
   " ----------
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+  nmap <Leader>m <Plug>MarkdownPreviewToggle
 
   " ----------
   " nerdcommenter - set comments in file
@@ -124,6 +125,9 @@ call plug#begin('~/.vim/plugged')
   " vim-fugitive - use git functions in vim
   " ----------
   Plug 'tpope/vim-fugitive'
+  " :G と打つと自動で :vertical Git に展開される
+  " 縦長なほうが見やすいため
+  cnoreabbrev <expr> G  (getcmdtype() ==# ':' && getcmdline() ==# 'G')  ? 'vert Git'  : 'G'
 
   " ----------
   " fern and related plugins - file explorer in vim
@@ -248,10 +252,18 @@ call plug#begin('~/.vim/plugged')
   let g:airline_symbols.maxlinenr = '☰ '
   let g:airline_symbols.dirty='⚡'
 
-  let g:airline_section_b = ''
-  " let g:airline_section_c = '%t'
+  " 現在のモードが表示されるのをOFFにする
+  let g:airline_section_a = ''
+  " 現在のブランチが表示されるのをOFFにする
+  " let g:airline_section_b = ''
+  " 現在開いているファイルパスの代わりに、ファイル名のみを表示する
+  let g:airline_section_c = '%t'
+  " 開いているファイルの言語を非表示にする
   let g:airline_section_x = ''
+  " 文字エンコードを非表示にする
   let g:airline_section_y = ''
+  " 行位置などを非表示にする
+  let g:airline_section_z = ''
 
   " ----------
   "  claudecode
